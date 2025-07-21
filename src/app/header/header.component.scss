@@ -1,0 +1,15 @@
+
+
+nav{
+  ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 30px;
+    li{
+      a{
+        text-decoration: none;
+      }
+    }
+  }
+}
