@@ -4,9 +4,21 @@
 </header>
 
 <!-- one way binding   - ერთი მიმართულებით მიმაგრება  {{}}  სტრინგის ინტერპოლაცია -->
+ <!-- propery binding [ ] -->
+
+ <!-- event binding  ()  -->
 
 <main>
-  <h2 class="mainText"  style="font-style: italic;">{{title}}</h2>
+  <h2 [ngStyle]="titleColor">{{title}}</h2>
+  <p>total price : {{x}}</p>
+  <img [src]="imgUrl" alt="" [width]="imgWidth" >
+  <button [disabled]="isActive" (click)="show()">Ok</button>
+
+  <input [type]="inputType" name="" id="" [placeholder]="hint" >
+
+  <button (click)="change()">Change Title</button>
+
+  <app-home></app-home>
 </main>
 
 
