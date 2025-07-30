@@ -1,8 +1,13 @@
-<p>home works!</p>
+<p>{{name}}</p>
 
 
 
-<img src="images/photo.png" alt="" width="300">
+<img src="images/photo.png" [alt]="name" [width]="width">
 <div class="cont">
 
 </div>
+
+
+
+
+<button [disabled]="isDisabled" (click)="fun()">OK</button>

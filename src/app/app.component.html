@@ -1,14 +1,29 @@
 
 <header>
-  <app-header></app-header>
+ <app-header></app-header>
 </header>
+
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+
+<footer>
+  <app-footer></app-footer>
+</footer>
+
+
+
+
+
 
 <!-- one way binding   - ერთი მიმართულებით მიმაგრება  {{}}  სტრინგის ინტერპოლაცია -->
  <!-- propery binding [ ] -->
 
  <!-- event binding  ()  -->
 
-<main>
+<!-- <main>
   <h2 [ngStyle]="titleColor">{{title}}</h2>
   <p>total price : {{x}}</p>
   <img [src]="imgUrl" alt="" [width]="imgWidth" >
@@ -19,9 +34,8 @@
   <button (click)="change()">Change Title</button>
 
   <app-home></app-home>
-</main>
+</main> -->
 
 
-<footer>
-  <app-footer></app-footer>
-</footer>
+<!-- spa single page application -->
+<!-- <app-home></app-home> -->
