@@ -1,1 +1,64 @@
 <p>contact works!</p>
+
+<!-- 2 way binding -->
+<!-- {{}}   []  () -->
+
+<!-- teplate driven form -->
+
+<form action="" #myForm="ngForm">
+  <input 
+      type="text" 
+      [(ngModel)]="userName" 
+      (ngModelChange)="liveSearch()"
+      required
+      name="userName"
+      #userNamecCtrl="ngModel"
+      pattern="^[ა-ჰa-zA-Z]+$"
+      />
+
+
+      <div 
+         class="errror" 
+         style="color:red"
+         *ngIf="userNamecCtrl.errors && userNamecCtrl.touched "
+         >
+          <p *ngIf="userNamecCtrl.errors['required']" >User Name is Requered</p>
+          <p *ngIf="userNamecCtrl.errors['pattern']" >Shoud be only letters</p>
+      </div>
+      
+      <!-- regular expression -->
+
+  <button [disabled]="myForm.invalid" (click)="save()">Save</button>
+</form>
+
+<p>{{ userName }}</p>
+
+<h2>{{ userNameShow }}</h2>
+
+
+
+
+
+<input type="text" [(ngModel)]="userObj.userName">
+<input type="number" [(ngModel)]="userObj.age">
+<input type="email" [(ngModel)]="userObj.email">
+<input type="email" [(ngModel)]="userObj.phone">
+<input type="email" [(ngModel)]="userObj.password">
+<input type="email" [(ngModel)]="userObj.imgUrl">
+<input type="gender" [(ngModel)]="userObj.gender">
+
+<button (click)="saveObj()" class="btn btn-primary">Save Obj</button>
+
+
+
+
+
+<div class="card" style="width: 18rem;" *ngFor="let user of userArr">
+  <img src="{{user.imgUrl}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{user.userName}}</h5>
+    <p class="card-text">{{user.email}}</p>
+        <p class="card-text">{{user.age}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
