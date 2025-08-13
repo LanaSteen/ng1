@@ -11,3 +11,38 @@
 
 
 <button [disabled]="isDisabled" (click)="fun()">OK</button>
+
+
+
+<button (click)="show()">Show Producct</button>
+
+
+<div class="container d-flex w-100" *ngIf ="showCards">
+    <div class="btns">
+         <input type="text" [(ngModel)]="search" (ngModelChange)="searchByTitle()">
+         <button class="btn btn-primary" (click)="sort()">{{btnTitle}}</button>
+         <button (click)="resetFilter()">Reset</button>
+    </div>
+     <div class="cardParent" *ngIf ="!isFiltered" >
+     <div class="card" style="width: 18rem;" *ngFor="let el of productArr" >
+        <img [src]="el.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{el.title}} </h5>
+           <h5 class="card-title">{{el.price}} </h5>
+          <p class="card-text">{{el.description}}</p>
+          <a routerLink="/details/{{el.id}}/{{el.title}}" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      </div>
+   <div class="cardParent" *ngIf ="isFiltered" >
+     <div class="card" style="width: 18rem;" *ngFor="let el of filteredArr" >
+        <img [src]="el.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{el.title}} </h5>
+           <h5 class="card-title">{{el.price}} </h5>
+          <p class="card-text">{{el.description}}</p>
+          <a routerLink="/details/{{el.id}}/{{el.title}}" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+   </div>
+</div>
