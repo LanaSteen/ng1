@@ -3,6 +3,7 @@
     <li *ngIf="!showMobileMenu"><a routerLink="/home" [routerLinkActive]="active">Home</a></li>
     <li *ngIf="!showMobileMenu"><a routerLink="/about" [routerLinkActive]="active">About</a></li>
     <li *ngIf="!showMobileMenu"><a routerLink="/contact" [routerLinkActive]="active">Contact</a></li>
+    <li><a routerLink="/product" [routerLinkActive]="active">Product</a></li>
   </ul>
   <div class="burger" (click)="showHide()">
    <div class="line"></div>

@@ -55,6 +55,10 @@ export const routes: Routes = [
     loadComponent: () => import('./home/details/details.component').then(p => p.DetailsComponent)
   },
   {
+    path: "product",
+    loadComponent: () => import('./product/product.component').then(p => p.ProductComponent)
+  },
+  {
     path: '**',
     component : ErrorComponent
   }

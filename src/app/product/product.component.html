@@ -1,0 +1,23 @@
+<p>product works!</p>
+
+<h2>
+  {{innoFromchild}}
+</h2>
+
+<button (click)="showDetails(1)"  >Show Details</button>
+<button (click)="showDetails(2)">Show Details</button>
+<button (click)="showDetails(3)">Show Details</button>
+
+
+
+<app-product-details  
+      *ngIf="isVisible"   
+      [hotelId]="hotelIdFromParent" 
+      (fromChildInfo)="childSentInfo($event)"
+
+></app-product-details>
+
+
+
+<!-- input    მშობლიდან შვილში გადაწოდება ინფორმაციის -->
+ <!-- output     შვილიდან მშობელში გადაწოდება ინფორმაციის -->

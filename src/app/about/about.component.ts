@@ -46,6 +46,17 @@ export class AboutComponent {
 
 
 
+   addToCart(){
+    this.http.postData("https://restaurant.stepprojects.ge/api/Baskets/AddToBasket", {
+        "quantity": 50,
+        "price": 10000,
+        "productId": 1
+    }).subscribe(resp => console.log(resp))
+
+   }
+
+
+
 
 
 }

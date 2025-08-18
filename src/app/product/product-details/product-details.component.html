@@ -1,0 +1,12 @@
+<p>product-details works!</p>
+
+
+<h1>hotel id is {{hotelId}}</h1>
+
+
+<h2>{{hotel.name}}</h2>
+<img [src]="hotel.featuredImage" alt="">
+
+
+<input type="text" [(ngModel)]="infoForParent">
+<button (click)="sendToParent()">Send to parent</button>
