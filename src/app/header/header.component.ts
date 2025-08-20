@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 
@@ -9,12 +9,26 @@ import { RouterModule } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+
+ ngOnInit(){
+  
+   if( localStorage.getItem("token")){
+    this.isAuth =true
+   }
+
+ }
+
+ isAuth = false
  showMobileMenu = false
 
  active = "active"
 
  showHide(){
    this.showMobileMenu == false ?  this.showMobileMenu = true :  this.showMobileMenu = false
+ }
+
+ logOut(){
+  localStorage.removeItem("token")
  }
 }
