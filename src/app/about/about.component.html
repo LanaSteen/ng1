@@ -5,6 +5,11 @@
 <button (click)="printhi()">Print Hi</button>
 
 
-<button *ngFor="let el of categoryArr">{{el.name}}</button>
+<button *ngFor="let el of categoryArr index:'index'">{{el.name}}</button>
 
 <button (click)="addToCart()">Add to Cart</button>
+
+
+<input type="text" [(ngModel)]="inputFromUSer">
+
+<p>{{inputFromUSer}}</p>

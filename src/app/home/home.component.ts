@@ -1,22 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Category, Product } from '../Models/product';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CommonFunctionService } from '../Services/common-function.service';
+import { TestService } from '../Services/test.service';
+import { ErrorDialogComponent } from "../error-dialog/error-dialog.component";
+import { ErrorService } from '../Services/error.service';
+import { ApiService } from '../Services/api.service';
 
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule, CommonModule, FormsModule],
+  imports: [RouterModule, CommonModule, FormsModule, ErrorDialogComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 
-  constructor(private commonFunc : CommonFunctionService){
-
+  constructor(private commonFunc : CommonFunctionService,
+            private test : TestService,
+             private err : ErrorService,
+             private api : ApiService
+            ){
+              debugger
+         this.testForHome = computed(() => this.test.testVar() )
+         this.showErr = computed(() => this.err.showErrOrNot() )
   }
+
+  ngOnInit(){
+    debugger
+     this.api.getData('https://restaurant.stepprojects.ge/api/Products/GetAl')
+        .subscribe(data => console.log(data))
+  }
+
+  showErr! :any
+
+  testForHome! : any
 
   showCards = false;
   btnTitle = "Sort Asc"

@@ -4,10 +4,11 @@ import { ApiService } from '../Services/api.service';
 import { Category, Product } from '../Models/product';
 import { CategoryProduct } from '../Models/category';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-about',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
@@ -21,7 +22,7 @@ export class AboutComponent {
 
   }
 
-
+inputFromUSer! :string
  ngOnInit(){
     this.http.getData("https://restaurant.stepprojects.ge/api/Categories/GetAll")
     .subscribe((resp : any) =>{

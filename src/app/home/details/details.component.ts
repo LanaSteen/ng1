@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Category, Product } from '../../Models/product';
+import { TestService } from '../../Services/test.service';
 
 @Component({
   selector: 'app-details',
@@ -10,7 +11,8 @@ import { Category, Product } from '../../Models/product';
 })
 export class DetailsComponent {
 
-  constructor(private route : ActivatedRoute  ){
+  constructor(private route : ActivatedRoute, private test : TestService  ){
+
 
      route.params.subscribe(data => {
       // console.log(data)
@@ -27,6 +29,12 @@ export class DetailsComponent {
      })
 
   }
+
+
+  
+     changeSignal(){
+      this.test.up();
+     }
 
   productid! : number
   productTitle!: string

@@ -52,6 +52,13 @@ export const routes: Routes = [
       import('./contact/contact.component').then((p) => p.ContactComponent),
   },
   {
+    path: 'details',
+    loadComponent: () =>
+      import('./home/details/details.component').then(
+        (p) => p.DetailsComponent
+      ),
+  },
+    {
     path: 'details/:id/:name',
     loadComponent: () =>
       import('./home/details/details.component').then(
@@ -73,6 +80,17 @@ export const routes: Routes = [
     path: 'login',
     loadComponent: () =>
       import('./login/login.component').then((p) => p.LoginComponent),
+  },
+
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./login/login.component').then((p) => p.LoginComponent),
+  },
+   {
+    path: 'signal',
+    loadComponent: () =>
+      import('./signal/signal.component').then((p) => p.SignalComponent),
   },
   {
     path: '**',
