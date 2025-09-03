@@ -35,7 +35,7 @@ inputFromUSer! :string
 
  }
 
-
+  show = true
 
   printhi(){
     this.common.greeting()
@@ -55,6 +55,8 @@ inputFromUSer! :string
     }).subscribe(resp => console.log(resp))
 
    }
+
+
 
 
 

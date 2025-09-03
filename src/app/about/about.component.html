@@ -1,4 +1,9 @@
-<p>about works!</p>
+<p   *ngIf="show">about works!</p>
+
+
+@if (show) {
+    <p>about works!</p>
+}
 
 
 
@@ -6,6 +11,13 @@
 
 
 <button *ngFor="let el of categoryArr index:'index'">{{el.name}}</button>
+
+@for (el of categoryArr; track $index) {
+    <button>{{el.name}}</button>
+}
+
+
+
 
 <button (click)="addToCart()">Add to Cart</button>
 

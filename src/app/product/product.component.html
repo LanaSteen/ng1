@@ -1,49 +1,39 @@
 <p>product works!</p>
 
-<h1>{{counter()}}</h1>
+<h1>{{ counter() }}</h1>
 <button (click)="plus()">Add</button>
 <button (click)="minus()">Minus</button>
 <button (click)="reset()">Reset</button>
-
 
 <!-- <h2>{{curentDate | date : "dd-MM-yyyy"}}</h2>
 <h2>{{curentDate | date : "MM-dd-yy hh:mm"}}</h2>
 <h2>{{curentDate | date : "short"}}</h2>
 <h2>{{curentDate | date : "fullTime"}}</h2> -->
 
+<h2>{{ "Hello" | uppercase }}</h2>
 
-<h2>{{"Hello" | uppercase}}</h2>
+<h2>{{ "HeLLo" | lowercase }}</h2>
+<h2>{{ 456.9987654654 | currency }}</h2>
+<h2>{{ 456.9987654654 | currency : "EUR" }}</h2>
 
-<h2>{{"HeLLo" | lowercase}}</h2>
-<h2>{{456.9987654654  | currency }}</h2>
-<h2>{{456.9987654654  | currency : "EUR"}}</h2>
+<h2>{{ "hello js" | slice : 0 : 5 }}</h2>
+<h2>{{ "hello js" | slice : -2 }}</h2>
 
-
-
-<h2>{{"hello js" | slice : 0:5}}</h2>
-<h2>{{"hello js" | slice : -2}}</h2>
-
-
-<h2>{{0.25 | percent }}</h2>
+<h2>{{ 0.25 | percent }}</h2>
 
 <h2>
-  {{innoFromchild}}
+  {{ innoFromchild }}
 </h2>
 
-<button (click)="showDetails(1)"  >Show Details</button>
+<button (click)="showDetails(1)">Show Details</button>
 <button (click)="showDetails(2)">Show Details</button>
 <button (click)="showDetails(3)">Show Details</button>
 
-
-
-<app-product-details  
-      *ngIf="isVisible"   
-      [hotelId]="hotelIdFromParent" 
-      (fromChildInfo)="childSentInfo($event)"
-
+<app-product-details
+  *ngIf="isVisible"
+  [hotelId]="hotelIdFromParent"
+  (fromChildInfo)="childSentInfo($event)"
 ></app-product-details>
 
-
-
 <!-- input    მშობლიდან შვილში გადაწოდება ინფორმაციის -->
- <!-- output     შვილიდან მშობელში გადაწოდება ინფორმაციის -->
+<!-- output     შვილიდან მშობელში გადაწოდება ინფორმაციის -->
